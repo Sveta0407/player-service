@@ -14,10 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("api/players")
 public class PlayerController {
-
     @Autowired
     PlayerService playerService;
-
 
     @PostMapping("/upload")
     public ResponseEntity<?> uploadPlayers() {
@@ -36,8 +34,8 @@ public class PlayerController {
 
     @GetMapping("/{playerId}")
     public ResponseEntity<Player> getPlayerById(@PathVariable("playerId") String playerId) {
-       return playerService.getPlayerById(playerId)
+        return playerService.getPlayerById(playerId)
                 .map(ResponseEntity::ok)
-                .orElseGet(()-> ResponseEntity.notFound().build());
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

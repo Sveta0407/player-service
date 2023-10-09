@@ -22,9 +22,14 @@ public class Player {
     @Id
     @Column(name = "playerID", nullable = false)
     private String playerId;
+
+    private String firstName;
+    private String lastName;
+    private String givenName;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
-    //maybe enum
+    //enum
     private String birthCountry;
     private String birthState;
     private String birthCity;
@@ -32,14 +37,10 @@ public class Player {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate deathDate;
 
-    //maybe enum
+    //enum
     private String deathCountry;
     private String deathState;
     private String deathCity;
-
-    private String firstName;
-    private String lastName;
-    private String givenName;
 
     private int weight;
     private int height;
